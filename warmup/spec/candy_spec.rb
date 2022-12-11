@@ -1,5 +1,6 @@
 require 'rspec'
-require_relative '../lib/candy'
+require './lib/candy'
+# require_relative '../lib/candy'
 
 RSpec.describe Candy do
   it 'has a type' do
@@ -8,7 +9,7 @@ RSpec.describe Candy do
     expect(candy.type).to eq('Skittles')
   end
 
-  xit 'has a different kind of candy' do
+  it 'has a different kind of candy' do
     candy = Candy.new('Snickers')
 
     expect(candy.type).to eq('Snickers')
