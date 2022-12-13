@@ -7,4 +7,40 @@ RSpec.describe Apartment do
         apt_1 = Apartment.new
         expect(apt_1.is_rented?).to eq(false)
     end
+
+    it 'has no rooms by default' do
+        apt_1 = Apartment.new
+
+        expect(apt_1.rooms).to eq([])
+    end
+
+    it 'can add a room' do
+        apt_1 = Apartment.new
+        bathroom = Room.new('bathroom')
+        apt_1.add_room(bathroom)
+
+        expect(apt_1.rooms).to eq(['bathroom'])
+    end
+
+    it 'can add multiple rooms' do
+        apt_1 = Apartment.new
+        bathroom = Room.new('bathroom')
+        apt_1.add_room(bathroom)
+        apt_1.add_room(Room.new('laundry'))
+        apt_1.add_room(Room.new('kitchen'))
+
+
+        expect(apt_1.rooms).to eq(['bathroom', 'laundry', 'kitchen'])
+    end
+
+    it 'can list rooms by name alphabetically' do
+        apt_1 = Apartment.new
+        bathroom = Room.new('bathroom')
+        apt_1.add_room(bathroom)
+        apt_1.add_room(Room.new('laundry'))
+        apt_1.add_room(Room.new('kitchen'))
+
+        expect(apt_1.list_rooms_by_name_alphabetically).to eq(['bathroom', 'kitchen', 'laundry'])
+    end
+
 end
