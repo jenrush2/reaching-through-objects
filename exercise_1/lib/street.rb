@@ -15,4 +15,12 @@ class Street
         @buildings << new_building
     end
     
+    def list_buildings
+        alpha_list = []
+        buildings.each do |entry|
+            alpha_list << entry.building_name
+        end
+        alpha_list.sort
+    end
+
 end

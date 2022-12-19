@@ -3,7 +3,7 @@ require './room'
 
 class Building
     attr_reader :building_number, 
-                :building_name 
+                :building_name
     attr_accessor :apartments
 
     def initialize(building_number, building_name)
