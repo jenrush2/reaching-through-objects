@@ -23,4 +23,15 @@ class Street
         alpha_list.sort
     end
 
+    def number_of_available_apartments
+        count = 0
+        buildings.each do |entry|
+            entry.list_apartments.each do |apt|
+                if apt.is_rented? == false
+                    count += 1
+                end
+            end
+        end
+        count
+    end
 end
