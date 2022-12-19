@@ -12,6 +12,10 @@ class Apartment
     def is_rented?
         @is_rented
     end
+
+    def rent
+        @is_rented=true
+    end
     
      def add_room(room_name)
          @room_count += 1

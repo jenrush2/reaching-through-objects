@@ -55,4 +55,12 @@ RSpec.describe Apartment do
         expect(apt_1.add_room(Room.new('office'))).to eq("I'm sorry, this apartment can't have more than 4 rooms.")
     end
 
+    it "can be rented" do
+        apt_1 = Apartment.new
+        expect(apt_1.is_rented?).to eq(false)
+        apt_1.rent
+        expect(apt_1.is_rented?).to eq(true)
+    end
+
+
 end
