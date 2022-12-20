@@ -34,4 +34,17 @@ class Street
         end
         count
     end
+
+    def list_available_apartments
+        list = {}
+        buildings.each do |entry|
+            entry.list_apartments.each do |apt|
+                if apt.is_rented? == false
+                    list[entry.building_name] = apt.rooms
+                end
+            end
+        end
+        list
+    end
+
 end
